@@ -8,3 +8,12 @@ set(SOURCE_FILES
         )
 
 add_executable(fractal_tree_generator ${SOURCE_FILES})
+
+set(CMAKE_EXE_LINKER_FLAGS "-static")
+
+set(SFML_STATIC_LIBRARIES TRUE)
+set(SFML_DIR C:/SFML/lib/cmake/SFML)
+find_package(SFML COMPONENTS graphics REQUIRED)
+
+include_directories(C:/SFML/include)
+target_link_libraries(fractal_tree_generator sfml-graphics)
