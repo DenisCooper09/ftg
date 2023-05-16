@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include "fractal_tree_generator.h"
 
 int main() {
 	sf::ContextSettings settings;
@@ -11,6 +12,8 @@ int main() {
 							"Fractal Tree Generator",
 							sf::Style::Close,
 							settings);
+
+	fractal_tree_generator fractal_tree_generator(window);
 
 	while (window.isOpen()) {
 		sf::Event event{};
@@ -26,6 +29,18 @@ int main() {
 		}
 
 		window.clear(sf::Color::Black);
+
+		fractal_tree_generator.draw_fractal_tree(10,
+												 200.0,
+												 0.7,
+												 -90,
+												 25.0,
+												 1.0f,
+												 {
+														 static_cast<double>(WINDOW_WIDTH) * 0.5,
+														 WINDOW_HEIGHT - 50
+												 });
+
 		window.display();
 	}
 

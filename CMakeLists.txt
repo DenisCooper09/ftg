@@ -5,6 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 set(SOURCE_FILES
         source/main.cpp
+        source/fractal_tree_generator.cpp
+        source/fractal_tree_generator.h
         )
 
 add_executable(fractal_tree_generator ${SOURCE_FILES})
